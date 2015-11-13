@@ -5,7 +5,7 @@ Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
 Router.route('/mail', function () {
   var res = this.response;
   var req = this.request;
-  	console.log(req);
+  	console.log(req.params);
     notifications.insert({text : 'new', new : true, timestamp:  Date.now()});
     res.end('');
 }, {where: 'server'});
