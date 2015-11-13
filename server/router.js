@@ -8,7 +8,7 @@ Router.route('/mail', function () {
   
   	console.log(req.body);
 
-    notifications.insert({text : req.body.body-plain, new : true, timestamp:  Date.now()});
+    notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     res.end('');
 }, {where: 'server'});
 
