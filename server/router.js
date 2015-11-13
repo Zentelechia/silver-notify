@@ -1,6 +1,7 @@
- Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
-        extended: false
-    }));
+Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
+    extended: false
+}));
+
 Router.route('/mail', function () {
   var res = this.response;
   var req = this.request;
