@@ -1,0 +1,1 @@
+notifications = new Meteor.Collection("notifications");
