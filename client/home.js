@@ -11,7 +11,7 @@ Template.ApplicationLayout.helpers({
 Template.ApplicationLayout.events({
 	'click .notifications_count' : function(e){
 		$('#scout').hide();
-		$('#zoho').hide();
+		$('#tech').hide();
 		$('#notifications').show();
 	},
 	'click .new_true' : function(e){
@@ -20,7 +20,7 @@ Template.ApplicationLayout.events({
 	},
 	'click #home' : function(){
 		$('#scout').show();
-		$('#zoho').hide();
+		$('#tech').hide();
 		$('#notifications').hide();
 	},
 	'click #tech' : function(){
