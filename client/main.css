@@ -15,7 +15,9 @@ iframe {
 	text-align: right;
 	vertical-align: middle;
 	padding: 3px;
-	background-image: url(./megapolis.png);
+	background-image: url("./megapolis.png");
+	background-repeat: no-repeat;
+	background-position: left;
 
 }
 .notifications_count a{
