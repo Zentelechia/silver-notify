@@ -23,7 +23,7 @@ Template.ApplicationLayout.events({
 		$('#zoho').hide();
 		$('#notifications').hide();
 	},
-	'click .zoho' : function(){
+	'click #tech' : function(){
 		$('#scout').hide();
 		$('#notifications').hide();
 		$('#zoho').show();
