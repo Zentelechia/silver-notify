@@ -11,23 +11,22 @@ Template.ApplicationLayout.helpers({
 Template.ApplicationLayout.events({
 	'click .notifications_count' : function(e){
 		$('#scout').hide();
-		$('.zoho').hide();
+		$('#zoho').hide();
 		$('#notifications').show();
 	},
 	'click .new_true' : function(e){
 		id=e.currentTarget.id;
 		notifications.update(id,{$set: {new : false}});
-
 	},
 	'click #home' : function(){
 		$('#scout').show();
-		$('.zoho').hide();
+		$('#zoho').hide();
 		$('#notifications').hide();
 	},
 	'click .zoho' : function(){
 		$('#scout').hide();
 		$('#notifications').hide();
-		$('.zoho').show();
+		$('#zoho').show();
 	}
 
 });
