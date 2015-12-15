@@ -59,6 +59,9 @@ iframe {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+#notifications {
+	padding: 10px;
+}
 
 @-moz-keyframes blinker {  
     0% { background-color: white; }
