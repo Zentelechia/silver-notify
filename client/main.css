@@ -18,6 +18,7 @@ iframe {
 	background-image: url("./megapolis.png");
 	background-repeat: no-repeat;
 	background-position: left;
+	background-size: 40px; 
 
 }
 .notifications_count a{
