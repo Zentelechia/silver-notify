@@ -6,14 +6,15 @@
 </body>
 <template name="ApplicationLayout">
   <div id="scout_notifications">
-      Новых уведомлений: <span class="notifications_count zero{{new}}">{{new}}</span> <img id="home" src='home.png'>
+      Новых уведомлений: <span class="notifications_count zero{{new}}">{{new}}</span> <img id="home" src='home.png'><img class="zoho" src='home.png'>
   </div>
   <iframe id="scout" src="http://silver.scout-gps.ru"></iframe>
+  <iframe id="zoho" src="https://creator.zoho.com/megapolisgps/tech" style="display: none"></iframe>
   <div id="notifications" style="display: none">
     {{#each notification}}
       <div id="{{this._id}}" class="notification_event new_{{this.new}}"><span class="date">{{date timestamp}}</span> {{text}}</div>
     {{/each}}
   </div>
-  <iframe id="zoho" src="https://creator.zoho.com/megapolisgps/tech" style="display: none"></iframe>
+  
 
 </template>
