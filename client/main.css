@@ -12,6 +12,7 @@ iframe {
 	height: 32px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 32px; 
 	vertical-align: middle;
 	background-image: url("./bar.png");
 	background-repeat: repeat-x;
