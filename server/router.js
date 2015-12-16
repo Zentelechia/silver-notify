@@ -8,8 +8,8 @@ Router.route('/mail', function () {
   
   	//console.log(req.body);
   	
+	console.log(req.body["body-plain"]);
   	msg=JSON.parse(req.body["body-plain"]);
-	console.log(msg);
     //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     msg.text=msg.message;
     msg.timestamp=Date.now();
