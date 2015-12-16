@@ -16,6 +16,7 @@ iframe {
 	vertical-align: middle;
 	background-image: url("./bar.png");
 	background-repeat: repeat-x;
+	padding-right: 10px;
 }
 .notifications_count a{
 	text-decoration: none !important;
