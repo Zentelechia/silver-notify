@@ -27,6 +27,9 @@ iframe {
  -o-animation: none !important;
  -ms-animation: none !important;
  animation: none !important;
+ text-align: right;
+ line-height: 32px; 
+ vertical-align: middle;
  background-color: lightgreen !important;
 
 }
