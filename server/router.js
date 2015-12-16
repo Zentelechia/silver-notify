@@ -10,10 +10,10 @@ Router.route('/mail', function () {
   	
 	console.log(req.body["body-plain"]);
   	msg=JSON.parse(req.body["body-plain"]);
-    //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     msg.text=msg.message;
     msg.timestamp=Date.now();
     msg.new=true;
+    //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     notifications.insert(msg);
     res.end('');
 }, {where: 'server'});
