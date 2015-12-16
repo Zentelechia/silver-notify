@@ -33,7 +33,7 @@ iframe {
 	width: 20px;
 	height: 20px;
 	text-align: center;
-	//display: inline-block;
+	display: block;
 	color: white;
 	font-weight: 700;
 	text-decoration: none !important;
