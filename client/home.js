@@ -26,7 +26,7 @@ Template.ApplicationLayout.events({
 	'click #globe' : function(){
 		$('#scout').hide();
 		$('#notifications').hide();
-		$('#zoho').show();
+		$('#tech').show();
 	}
 
 });

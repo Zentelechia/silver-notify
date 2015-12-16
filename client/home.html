@@ -4,12 +4,12 @@
 
 <body>
 </body>
+
 <template name="ApplicationLayout">
   <div id="scout_notifications">
       <span><img src="./left-bar1.png" style="float: left">
-      Новых уведомлений:<span class="notifications_count zero{{new}}">{{new}}</span>
+      <span>Новых уведомлений:<span class="notifications_count zero{{new}}">{{new}}</span></span>
       <img id="home" src='globe.png'>
-      <img id="globe" src='tech.png'>
       </span>
   </div>
   <iframe id="scout" src="http://silver.scout-gps.ru"></iframe>
@@ -18,6 +18,4 @@
       <div id="{{this._id}}" class="notification_event new_{{this.new}}"><span class="date">{{date timestamp}}</span> {{text}}</div>
     {{/each}}
   </div>
-  
-
 </template>
