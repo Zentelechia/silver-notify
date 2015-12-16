@@ -6,9 +6,10 @@ Router.route('/mail', function () {
   var res = this.response;
   var req = this.request;
   
-  	console.log(req.body);
+  	//console.log(req.body);
+  	
   	msg=JSON.parse(req.body["body-plain"]);
-
+	console.log(msg);
     //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     msg.text=msg.message;
     msg.timestamp=Date.now();
