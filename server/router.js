@@ -9,10 +9,18 @@ Router.route('/mail', function () {
   	//console.log(req.body);
   	
 	console.log(req.body["body-plain"]);
-  	msg=JSON.parse(req.body["body-plain"]);
-    msg.text=msg.message;
-    msg.timestamp=Date.now();
+    msg={};
+    try {
+      msg=JSON.parse(req.body["body-plain"]);
+      msg.text=msg.message;
+
+    }
+    catch(err){
+      msg.text=req.body["body-plain"];
+    }
+  	msg.timestamp=Date.now();
     msg.new=true;
+    console.log(msg);
     //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     notifications.insert(msg);
     res.end('');
