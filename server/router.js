@@ -6,8 +6,9 @@ Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
 Router.route('/mail', function () {
   var res = this.response;
   var req = this.request;
-  var msg={new : true, timestamp=Date.now()};  
-  	//console.log(req.body);
+  var msg= {};  
+  msg.new=true;
+  msg.timestamp=Date.now();
   	
 	 console.log(req.body["body-plain"]);
     try {
