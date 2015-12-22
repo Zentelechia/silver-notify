@@ -1,3 +1,4 @@
+
 Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
     extended: false
 }));
@@ -5,21 +6,18 @@ Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
 Router.route('/mail', function () {
   var res = this.response;
   var req = this.request;
-  
+  var msg={new : true, timestamp=Date.now()};  
   	//console.log(req.body);
   	
-	console.log(req.body["body-plain"]);
-    msg={};
+	 console.log(req.body["body-plain"]);
     try {
-      msg=JSON.parse(req.body["body-plain"]);
-      msg.text=msg.message;
-
+      body=JSON.parse(req.body["body-plain"]);
+      msg.text=bofy.message;
     }
     catch(err){
       msg.text=req.body["body-plain"];
     }
-  	msg.timestamp=Date.now();
-    msg.new=true;
+  
     console.log(msg);
     //notifications.insert({text : req.body["body-plain"], new : true, timestamp:  Date.now()});
     notifications.insert(msg);
