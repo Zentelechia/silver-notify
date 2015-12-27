@@ -26,22 +26,27 @@ Router.route('/mail', function () {
   
 try {
       body=req.body["body-plain"];
-      console.log(body);
+      console.log("body:"+body);
       message=JSON.parse(body);
-      console.log(message);
       gosnomer=message.gosnomer;
+      
       unit_id=get_unit_id_by_gosnomer(gosnomer);
       time_start=message.time_start;
-//      time_start="23.12.2015 11:32:38 (UTC+3)";
+//    time_start="23.12.2015 11:32:38 (UTC+3)";
       to=moment(time_start,"DD.MM.YYYY HH:mm:ss Z");
       from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(60,'m');
+    
       format_string=("YYYY-MM-DDThh:mm:ss.000");
+    
       msg.text=message.message;        
       if(msg.text.search("тревожной")>=0){
+    
         stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
-        console.log(stats);
+    
+
+        console.log("Stats: "+stats);
         ports=find_actuated_discrete_sensor(stats, from.unix());
-        console.log(ports);
+        console.log("Ports: "+ports);
         if (ports.length>0){
           ports.forEach(function(pp){
               p=terminal_settings.findOne({code: "P"+pp});
@@ -53,8 +58,6 @@ try {
           notifications.insert(msg);
         }
       }
-      
-    //find_actuated_discrete_sensor(stats, from.unix());
  }
   catch(err){
 
