@@ -26,6 +26,7 @@ iframe {
  animation: none !important;
  background-color: lightgreen !important;
 }
+
 .notifications_count {
 	cursor: pointer;
 	background-color: red;
@@ -39,7 +40,8 @@ iframe {
 	font-weight: 700;
 	text-decoration: none !important;
  	vertical-align: middle;
-
+}
+.scout_notifications{
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
