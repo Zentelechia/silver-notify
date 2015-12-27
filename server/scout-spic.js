@@ -81,7 +81,7 @@ find_actuated_discrete_sensor = function  (stats, from){
     sensors.forEach(function(s){
       var last_points=(s.Points).slice(-2);
       console.log(last_points);
-      if (last_points[0]==false && last_points[1]==true){
+      if (last_points[0].Value==false && last_points[1].Value==true){
             console.log("Событие по порту #"+port);
             actuated_ports.push(port);
       }
