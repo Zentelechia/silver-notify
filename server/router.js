@@ -26,7 +26,7 @@ Router.route('/mail', function () {
   
 try {
       console.log(req.body["stripped-text"]);
-      console.log(req.body.["body-plain"]);
+      console.log(req.body["body-plain"]);
       body=req.body["body-plain"];
 
       message=JSON.parse(body);
