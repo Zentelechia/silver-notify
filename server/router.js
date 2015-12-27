@@ -24,7 +24,7 @@ Router.route('/mail', function () {
 //  5. Get sensors names and messages
 //  6. Make notification
   
-try {
+//try {
       body=req.body["body-plain"];
 
       message=JSON.parse(body);
@@ -59,10 +59,10 @@ try {
           notifications.insert(msg);
         }
       }
- }
-  catch(err){
+// }
+ // catch(err){
 
     console.log("catch err:" + err);
- }
+ //}
   res.end('');
 }, {where: 'server'});
