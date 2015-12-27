@@ -64,7 +64,7 @@ Router.route('/mail', function () {
 // }
  // catch(err){
 
-    console.log("catch err:" + err);
+//    console.log("catch err:" + err);
  //}
   res.end('');
 }, {where: 'server'});
