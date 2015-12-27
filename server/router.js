@@ -25,8 +25,9 @@ Router.route('/mail', function () {
 //  6. Make notification
   
 try {
-  
-      message=JSON.parse(req.body["body-plain"]);
+      body=req.body["body-plain"];
+      console.log(body);
+      message=JSON.parse(body);
       console.log(message);
       gosnomer=message.gosnomer;
       unit_id=get_unit_id_by_gosnomer(gosnomer);
