@@ -41,6 +41,7 @@ try {
         stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
         console.log(stats);
         ports=find_actuated_discrete_sensor(stats, from.unix());
+        console.log(ports);
         if (ports.length>0){
           ports.forEach(function(pp){
               p=terminal_settings.findOne({code: "P"+pp});
@@ -52,7 +53,7 @@ try {
           notifications.insert(msg);
         }
       }
-      console.log(ports);
+      
     //find_actuated_discrete_sensor(stats, from.unix());
  }
   catch(err){
