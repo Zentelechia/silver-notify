@@ -25,9 +25,10 @@ Router.route('/mail', function () {
 //  6. Make notification
   
 try {
-      console.log(req).body;
+      console.log(req.body["stripped-text"]);
+      console.log(req.body.["body-plain"]);
       body=req.body["body-plain"];
-      console.log("body:"+body);
+
       message=JSON.parse(body);
       gosnomer=message.gosnomer;
       
