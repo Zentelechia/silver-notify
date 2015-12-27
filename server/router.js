@@ -37,7 +37,7 @@ Router.route('/mail', function () {
       to=moment(time_start,"DD.MM.YYYY HH:mm:ss Z");
       from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(1,'d');
     
-      format_string=("YYYY-MM-DDThh:mm:ss.000");
+      format_string=("YYYY-MM-DDTHH:mm:ss.000");
     
       msg.text=message.message;        
       if(msg.text.search("тревожной")>=0){
