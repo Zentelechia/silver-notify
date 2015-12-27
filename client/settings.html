@@ -1,0 +1,24 @@
+<template name="settings">
+<div>
+<h1>Настройка сообщений при активации дискретных портов</h1>
+<table id="settings">
+<tr>
+<th>id</th>
+<th>
+Порт
+</th>
+<th>
+Значение
+</th>
+</tr>
+{{#each settings}}
+<tr id="{{_id}}">
+<td>{{_id}}</td>
+<td>{{this.code}}</td>
+<td class="settings_value"><input id="{{this.code}}" style="padding: 3px" value="{{this.value}}"/></td>
+</tr>
+{{/each}}
+</table>
+</div>
+
+</template>

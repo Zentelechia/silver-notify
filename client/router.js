@@ -4,3 +4,6 @@ Router.configure({
 Router.route('/', function () {
 	this.render();
 });
+Router.route('settings', function () {
+	this.render('settings');
+});
