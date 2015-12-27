@@ -52,7 +52,7 @@ try {
           notifications.insert(msg);
         }
       }
-      console.log(port);
+      console.log(ports);
     //find_actuated_discrete_sensor(stats, from.unix());
  }
   catch(err){
