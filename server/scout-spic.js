@@ -85,11 +85,11 @@ find_actuated_discrete_sensor = function  (stats, from){
             var points=(s.Points).reverse();
             if (points.length>1){
               points.forEach(function(p,i){
-                if (p.Value==true && (points.length==1 || points[i+1].Value==false)){
+                if (p.Value ==true && (points.length==1 || points[i+1].Value==false)){
                   console.log("Событие по порту #"+port);
                   actuated_ports.push(port);
                 }
-              }
+              });
             }
           });
             port++;
