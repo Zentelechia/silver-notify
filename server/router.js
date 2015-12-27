@@ -37,7 +37,7 @@ try {
       from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(60,'m');
       format_string=("YYYY-MM-DDThh:mm:ss.000");
       msg.text=message.message;        
-      if(msg.message.search("тревожной")!=-1){
+      if(msg.text.search("тревожной")>=0){
         stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
         console.log(stats);
         ports=find_actuated_discrete_sensor(stats, from.unix());
