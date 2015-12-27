@@ -83,10 +83,12 @@ find_actuated_discrete_sensor = function  (stats, from){
           port_triggered=null;
           sensors.forEach(function(s){
             var points=(s.Points).reverse();
-            points.forEach(function(p,i){
-             if (p.Value==true && (points[i+1].Value==false || points.length==1)){
-              console.log("Событие по порту #"+port);
-              actuated_ports.push(port);
+            if (points.length>1){
+              points.forEach(function(p,i){
+               if (p.Value==true && (points.length==1 || points[i+1].Value==false || )){
+                console.log("Событие по порту #"+port);
+                actuated_ports.push(port);
+              }
             }
           });
             port++;

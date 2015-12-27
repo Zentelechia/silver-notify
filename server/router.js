@@ -35,7 +35,7 @@ Router.route('/mail', function () {
       time_start=message.time_start;
 //    time_start="23.12.2015 11:32:38 (UTC+3)";
       to=moment(time_start,"DD.MM.YYYY HH:mm:ss Z");
-      from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(60,'m');
+      from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(1,'d');
     
       format_string=("YYYY-MM-DDThh:mm:ss.000");
     
