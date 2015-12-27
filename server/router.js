@@ -26,11 +26,7 @@ Router.route('/mail', function () {
   
 //try {
       body=req.body["body-plain"];
-//!!!!      
-      res.end('');
-      return;
 
-//!!!      
       message=JSON.parse(body);
       console.log(message.gosnomer);
       gosnomer=message.gosnomer;
