@@ -74,16 +74,14 @@ get_discrete_statistics       = function  (unit_id,from,to){
           statistics = statistics.replace(/\+\d{4}\)\\\//g, '');
           return JSON.parse(statistics);}
 find_actuated_discrete_sensor = function  (stats, from){
-    console.log("find_actuated_discrete_sensor");
     console.log('starting search ports..');
     sensors=stats.Sensors;
     var actuated_ports=[];
-    unix=moment(from,"DD.MM.YYYY HH:mm:ss Z").unix();
     var port=0;
-    port_triggered=null;
     sensors.forEach(function(s){
       var last_points=(s.Points).slice(-2);
-      if (last_points.length==2 && last_points[0]==false &&last_points[1]==true){
+      console.log(last_points);
+      if (last_points[0]==false && last_points[1]==true){
             console.log("Событие по порту #"+port);
             actuated_ports.push(port);
       }
