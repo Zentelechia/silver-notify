@@ -10,19 +10,53 @@ Router.route('/mail', function () {
 
   msg.new=true;
   msg.timestamp=Date.now();
-  	
-	console.log(req.body["body-plain"]);
+  msg.message="Новое событие";
+  message={};	
 
-  try {
-    body=JSON.parse(req.body["body-plain"]);
+
+///  console.log(req.body["body-plain"]);
+
+//  ok 1. Get Authorization token
+//  ok 2. Find UnitId by Gosnomer (from mail)
+//  ok 3. Get Discrete Statistics by period
+//  4. Find actuated sensors
+//  5. Get sensors names and messages
+//  6. Make notification
+  
+try {
+      message=JSON.parse(req.body["body-plain"]);
+      gosnomer=message.gosnomer;
+      unit_id=get_unit_id_by_gosnomer(gosnomer);
+      time_start=message.time_start;
+      time_start="23.12.2015 11:32:38 (UTC+3)";
+      to=moment(time_start,"DD.MM.YYYY HH:mm:ss Z");
+      from=moment(time_start,"DD.MM.YYYY HH:mm:ss Z").subtract(60,'m');
+      format_string=("YYYY-MM-DDThh:mm:ss.000");
+      msg.text=body.message;  
+      
+      if(msg.message.search("тревожной")!=-1){
+      stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
+      console.log(stats);
+      ports=find_actuated_discrete_sensor(stats, from.unix());
+      if (ports.length>0){
+        ports.forEach(function(pp){
+            pp=terminal_settings.findOne({code: "P"+pp});
+            msg.text=pp.value;
+            notifications.insert(msg);            
+
+        });
+      }
+      else{
+        notifications.insert(msg);
+      }
+
+      }
+      console.log(port);
+    //find_actuated_discrete_sensor(stats, from.unix());
     msg.text=body.message;
-  }
+ }
   catch(err){
-    msg.text=req.body["body-plain"];
-  }
-  notifications.insert(msg);
+    console.log(err);
+ }
   res.end('');
-
 }, {where: 'server'});
-
- 
