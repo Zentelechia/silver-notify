@@ -30,6 +30,8 @@ Router.route('/mail', function () {
       message=JSON.parse(body);
       message.lat=message.lat.slice(0, -1);
       message.lan=message.lan.slice(0, -1);
+      message.new=true;
+      message.timestamp=Date.now();
       console.log(message.gosnomer);
       gosnomer=message.gosnomer;
       
@@ -41,7 +43,8 @@ Router.route('/mail', function () {
     
       format_string=("YYYY-MM-DDTHH:mm:ss.999");
     
-      msg.text=message.message;        
+      msg.text=message.message; 
+
       if(message.discrete){
         msg=message;
         message.new=true;
@@ -60,7 +63,7 @@ Router.route('/mail', function () {
           });
         }
         else{
-          notifications.insert(msg);
+          notifications.insert(message);
         }
       }
 // }
