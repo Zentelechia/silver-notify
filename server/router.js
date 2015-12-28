@@ -51,7 +51,7 @@ Router.route('/mail', function () {
         if (ports.length>0){
           ports.forEach(function(pp,i){
               p=terminal_settings.findOne({code: "P"+pp});
-              msg.text=p.value+"("+msg.gosnomer+")");
+              msg.text=p.value+"("+msg.gosnomer+")";
               notifications.insert(msg);            
           });
         }
