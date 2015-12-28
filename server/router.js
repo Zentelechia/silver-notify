@@ -12,7 +12,7 @@ Router.route('/mail', function () {
   msg.new=true;
   msg.timestamp=Date.now();
   msg.message="Новое событие";
-  message={};	
+  var message={};	
 
 
 ///  console.log(req.body["body-plain"]);
@@ -47,8 +47,6 @@ try {
 
       if(message.discrete){
         msg=message;
-        message.new=true;
-        message.timestamp=Date.now();
         stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
     
 
@@ -70,10 +68,9 @@ try {
       }
  }
   catch(err){
-            message.text=message.message;
-           notifications.insert(message);
+            console.log(err);
+            message.text=req.body["body-plain"];
+            notifications.insert(message);
   }
-//    console.log("catch err:" + err);
- //}
   res.end('');
 }, {where: 'server'});
