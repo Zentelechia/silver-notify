@@ -1,7 +1,11 @@
 Template.ApplicationLayout.helpers({
 	new : function() {return notifications.find({new : true}).count()},
 	notification: function(){
-		return notifications.find().fetch().reverse();
+		q={};
+		if (Session.get("q")){
+			q={text : {$regex : Session.get("q")||"",$options: 'i'}}
+		}
+		return notifications.find(q).fetch().reverse();
 	},
 	date: function(t) {return moment(t).format("HH:mm:ss DD.MM")},
 });
@@ -27,6 +31,9 @@ Template.ApplicationLayout.events({
 		$('#scout').hide();
 		$('#notifications').hide();
 		$('#tech').show();
+	},
+	'keyup #search': function(event) {
+		Session.set("q",event.target.value);
 	}
 
 });

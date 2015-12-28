@@ -18,6 +18,7 @@
   </div>
   <iframe id="scout" src="http://silver.scout-gps.ru"></iframe>
   <div id="notifications" style="display: none">
+   <input id="search" placeholder="Поиск уведомления"/>
     {{#each notification}}
       <div id="{{this._id}}" class="notification_event new_{{this.new}}"><span class="date">{{date timestamp}}</span>
       {{#if lat}}
