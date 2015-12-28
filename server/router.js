@@ -42,7 +42,7 @@ Router.route('/mail', function () {
       format_string=("YYYY-MM-DDTHH:mm:ss.999");
     
       msg.text=message.message;        
-      if(msg.text.search("Срабатывание")>=0){
+      if(message.discrete){
         msg=message;
         message.new=true;
         message.timestamp=Date.now();
