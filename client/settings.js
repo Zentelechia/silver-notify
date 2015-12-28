@@ -1,6 +1,6 @@
 Template.settings.helpers({
 	settings: function(){
-		return terminal_settings.find({},{sort : {order : -1}});
+		return terminal_settings.find({},{sort : {order : 1}});
 	}
 });
 
