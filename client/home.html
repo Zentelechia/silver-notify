@@ -19,7 +19,12 @@
   <iframe id="scout" src="http://silver.scout-gps.ru"></iframe>
   <div id="notifications" style="display: none">
     {{#each notification}}
-      <div id="{{this._id}}" class="notification_event new_{{this.new}}"><span class="date">{{date timestamp}}</span> {{text}}</div>
+      <div id="{{this._id}}" class="notification_event new_{{this.new}}"><span class="date">{{date timestamp}}</span>
+      {{#if lat}}
+          <a target="_blank" href="https://static-maps.yandex.ru/1.x/?size=450,450&z=13&l=map&pt={{lan}},{{lat}}">Карта</a>
+      {{/if}}
+      {{text}}
+      </div>
     {{/each}}
   </div>
 </template>
