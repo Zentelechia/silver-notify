@@ -57,7 +57,7 @@ try {
           ports.forEach(function(pp,i){
               p=terminal_settings.findOne({code: "P"+pp});
               if (p.enable){
-                msg.text=p.value+" ("+msg.gosnomer+")";
+                msg.text=p.value+" ["+msg.gosnomer+" "+to.format("DD.MM.YYYY HH:mm:ss")+"]";
                 notifications.insert(msg);            
               }
           });
