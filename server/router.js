@@ -41,7 +41,9 @@ Router.route('/mail', function () {
     
       msg.text=message.message;        
       if(msg.text.search("тревожной")>=0){
-    
+        msg=message;
+        message.new=true;
+        message.timestamp=Date.now();
         stats=get_discrete_statistics(unit_id,from.format(format_string),to.format(format_string));
     
 
