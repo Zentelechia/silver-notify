@@ -83,7 +83,7 @@ find_actuated_discrete_sensor = function  (stats, from){
 //      console.log(last_points);
       if (last_points.length==2 && last_points[0].Value==false && last_points[1].Value==true) {
             console.log("Событие по порту #"+port);
-            console.log("Задержка по событию: "+(moment(to,"YYYY-MM-DDTHH:mm:SSS").diff(last_points[1].Timestamp))/1000+" сек");
+            console.log("Задержка по событию: "+last_points[1].Timestamp+" сек");
             console.log("--------");
             actuated_ports.push(port);
       }
