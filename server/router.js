@@ -58,8 +58,10 @@ try {
         if (ports.length>0){
           ports.forEach(function(pp,i){
               p=terminal_settings.findOne({code: "P"+pp});
-              msg.text=p.value+" ("+msg.gosnomer+")";
-              notifications.insert(msg);            
+              if (p.enable){
+                msg.text=p.value+" ("+msg.gosnomer+")";
+                notifications.insert(msg);            
+              }
           });
         }
         else{

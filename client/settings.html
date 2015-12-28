@@ -8,14 +8,24 @@
 Порт
 </th>
 <th>
+Активен
+</th>
+
+
+<th>
 Значение
 </th>
 </tr>
 {{#each settings}}
-<tr id="{{_id}}">
+<tr>
 <td>{{_id}}</td>
 <td>{{this.code}}</td>
-<td class="settings_value"><input id="{{this.code}}" style="padding: 3px; width: 400px" value="{{this.value}}"/></td>
+<td>
+	<input  type="checkbox" id="{{this._id}}" class="enabler" checked="{{#if this.enable}}checked{{/if}}"/>
+</td>
+<td class="settings_value">
+	<input class="texter" id="{{this.code}}" style="padding: 3px; width: 400px" value="{{this.value}}"/>
+</td>
 </tr>
 {{/each}}
 </table>
