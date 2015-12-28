@@ -28,6 +28,8 @@ Router.route('/mail', function () {
       body=req.body["body-plain"];
 
       message=JSON.parse(body);
+      message.lat=message.lat.slice(0, -1);
+      message.lan=message.lan.slice(0, -1);
       console.log(message.gosnomer);
       gosnomer=message.gosnomer;
       
