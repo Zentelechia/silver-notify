@@ -49,12 +49,10 @@ Router.route('/mail', function () {
         ports=find_actuated_discrete_sensor(stats, from.unix());
         console.log("Ports: "+ports);
         if (ports.length>0){
-          k=0;
           ports.forEach(function(pp,i){
-              p=terminal_settings.findOne({code: "P"+k});
+              p=terminal_settings.findOne({code: "P"+pp});
               msg.text=p.value;
               notifications.insert(msg);            
-              k++;
           });
         }
         else{
